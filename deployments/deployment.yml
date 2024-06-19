@@ -33,18 +33,18 @@ spec:
         - name: coworking
           image: 763303378933.dkr.ecr.us-east-1.amazonaws.com/coworking:latest
           imagePullPolicy: Always
-          # livenessProbe:
-          #   httpGet:
-          #     path: /health_check
-          #     port: 5153
-          #   initialDelaySeconds: 5
-          #   timeoutSeconds: 2
-          # livenessProbe:
-          #   httpGet:
-          #     path: /health_check
-          #     port: 5153
-          #   initialDelaySeconds: 5
-          #   timeoutSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /health_check
+              port: 5153
+            initialDelaySeconds: 5
+            timeoutSeconds: 2
+          readinessProbe:
+            httpGet:
+              path: /health_check
+              port: 5153
+            initialDelaySeconds: 5
+            timeoutSeconds: 5
           envFrom:
             - configMapRef:
                 name: postgresql-configmap
