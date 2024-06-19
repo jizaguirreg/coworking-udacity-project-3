@@ -39,9 +39,9 @@ spec:
               port: 5153
             initialDelaySeconds: 5
             timeoutSeconds: 2
-          readinessProbe:
+          livenessProbe:
             httpGet:
-              path: /readiness_check
+              path: /health_check
               port: 5153
             initialDelaySeconds: 5
             timeoutSeconds: 5
