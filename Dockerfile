@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y build-essential libpq-dev && rm -rf /va
 
 
 # Working directory
-WORKDIR /app
+WORKDIR /root
 
 # Python dependencies
 COPY requirements.txt .
