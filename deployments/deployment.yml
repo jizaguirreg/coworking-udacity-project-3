@@ -54,4 +54,4 @@ spec:
                 secretKeyRef:
                   name: mydatabase-secrets
                   key: db_password
-      # restartPolicy: Always
+      restartPolicy: Always
