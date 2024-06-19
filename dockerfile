@@ -20,7 +20,7 @@ COPY requirements.txt .
 RUN pip install --upgrade pip setuptools wheel && pip install -r requirements.txt
 
 # Copy the rest of the application code to the working directory
-COPY /analytics/ /app
+COPY . .
 
 # Expose port 5153
 EXPOSE 5153
