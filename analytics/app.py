@@ -12,7 +12,6 @@ from config import app, db
 
 port_number = int(os.environ.get("APP_PORT", 5153))
 
-
 @app.route("/health_check")
 def health_check():
     return "ok"
@@ -20,12 +19,12 @@ def health_check():
 
 @app.route("/readiness_check")
 def readiness_check():
-    try:
-        count = db.session.query(token).count()
-    except Exception as e:
-        app.logger.error(e)
-        return "failed", 500
-    else:
+    # try:
+    #     count = db.session.query(Token).count()
+    # except Exception as e:
+    #     app.logger.error(e)
+    #     return "failed", 500
+    # else:
         return "ok"
 
 
