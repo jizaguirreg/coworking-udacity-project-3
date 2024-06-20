@@ -7,7 +7,7 @@ spec:
   selector:
     service: coworking
   ports:
-    - name: "5153"
+    - name: "5050"
       protocol: TCP
       port: 5153
       targetPort: 5153
