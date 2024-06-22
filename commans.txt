@@ -1,0 +1,32 @@
+AWS:
+aws configure
+aws sts get-caller-identity
+
+
+EKS:
+eksctl create cluster --name my-cluster --region us-east-1 --nodegroup-name my-nodes --node-type t3.small --nodes 1 --nodes-min 1 --nodes-max 2
+aws eks --region us-east-1 update-kubeconfig --name my-cluster
+kubectl config current-context
+kubectl config view
+
+---
+eksctl delete cluster --name my-cluster --region us-east-1
+---
+
+kubectl get namespace
+kubectl get storageclass
+kubectl get pods
+
+
+ kubectl apply -f pvc.yml 
+ kubectl apply -f pv.yml 
+ kubectl apply -f postgresql-deployment.yml 
+ kubectl apply -f postgresql-service.yml
+
+
+kubectl get svc
+
+
+
+
+
